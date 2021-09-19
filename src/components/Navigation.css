@@ -1,0 +1,20 @@
+.navigation-bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(5, 53, 61);
+  color: #ebedee;
+  height: 30px;
+  padding: 7px;
+}
+.buton {
+  color: rgb(5, 53, 61);
+  background-color: #ebedee;
+  width: 100px;
+  font-family: arial;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.links {
+  color: rgb(121, 4, 95);
+  text-decoration: none;
+}

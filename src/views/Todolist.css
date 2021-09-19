@@ -1,0 +1,14 @@
+.container-list {
+  background-color: rgb(209, 186, 231);
+  width: fit-content;
+  height: fit-content;
+  border: 2px solid cornsilk;
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 21px;
+}
+body {
+  background-color: rgb(255, 252, 242);
+}
