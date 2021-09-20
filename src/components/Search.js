@@ -3,7 +3,7 @@ function Search({ handleSearchList }) {
   return (
     <div className='search_box'>
       <input
-        classname='search'
+        className='search'
         placeholder='Search'
         type='text'
         onChange={(event) => {
