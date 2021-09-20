@@ -1,5 +1,5 @@
 import "./Todolist.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import List from "../components/List";
 import NewList from "../components/NewList";
 import Search from "../components/Search";
@@ -9,8 +9,26 @@ function Todolist() {
     { name: "Lista 2", date: "1.10.2021", content: "sadsdasca" },
     { name: "Lista 3", date: "1.10.2021", content: "sadsdasca" },
   ]);
-  const [useFilteredList, setFilteredList] = useState([]);
+  const [userFilteredList, setuserFilteredList] = useState([]);
   const [search, setSearch] = useState(" ");
+  const handleDelete = () => {
+    alert("Button Clicked!");
+  };
+  useEffect(() => {
+    const newFilteredList = userList.filter((user) => {
+      if (user.name.toLowerCase().includes(search.toLowerCase())) {
+        return true;
+      }
+      if (user.date.toLowerCase().includes(search.toLowerCase())) {
+        return true;
+      }
+      if (user.content.toLowerCase().includes(search.toLowerCase())) {
+        return true;
+      }
+      return false;
+    });
+    setuserFilteredList(newFilteredList);
+  });
 
   const handleAddList = (name, date, content) => {
     const newUserList = userList.map((user) => {
@@ -28,7 +46,7 @@ function Todolist() {
       <Search handleSearchList={handleSearchList} />
       <NewList handleAddList={handleAddList} />
       <div className='container-list'>
-        {userList.map((user, index) => {
+        {userFilteredList.map((user, index) => {
           return (
             <List
               nameAtr={user.name}
